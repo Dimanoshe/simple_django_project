@@ -10,7 +10,6 @@ def index(request):
     done = LeadState.objects.get(name='STATE_DONE')
 
 
-   
     ld = Lead.objects.get(name='test')
 
     '''
@@ -19,8 +18,4 @@ def index(request):
     '''
     Lead.status_update(ld, done)
 
-
-    result = {
- 
-        }
     return HttpResponse(ld.state.name)
